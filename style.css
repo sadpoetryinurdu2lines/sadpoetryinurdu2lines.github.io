@@ -1,0 +1,378 @@
+:root {
+    --bg-primary: #0d0d12;
+    --bg-card: #1a1a2e;
+    --bg-header: rgba(13, 13, 18, 0.92);
+    --accent-purple: #a78bfa;
+    --accent-gold: #f0c040;
+    --text-primary: #e8e6f0;
+    --text-muted: #8884a0;
+    --border: rgba(167, 139, 250, 0.15);
+    --max-width: 860px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typography */
+.urdu-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    text-align: center;
+    direction: rtl;
+}
+
+.roman-urdu {
+    font-style: italic;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Layout */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.content-section {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-header);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+.sticky-header nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.logo {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.8rem;
+    color: var(--accent-purple);
+    font-weight: bold;
+}
+
+.sticky-header ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold);
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--accent-gold);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-purple);
+}
+
+.hero h2 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Poetry Grid */
+.poetry-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.poetry-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0; /* For animation */
+}
+
+.poetry-card.visible {
+    opacity: 1;
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.poetry-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 20px rgba(167, 139, 250, 0.1);
+}
+
+.poet-badge {
+    background-color: rgba(167, 139, 250, 0.1);
+    color: var(--accent-purple);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+.copy-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid var(--accent-purple);
+    background: transparent;
+    color: var(--accent-purple);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.copy-btn:hover, .copy-btn.copied {
+    background-color: var(--accent-purple);
+    color: white;
+}
+
+/* SEO Article Section */
+.seo-article {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.seo-article h2 {
+    color: var(--accent-purple);
+    margin: 2rem 0 1rem;
+}
+
+.seo-article p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.faq-accordion details {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.faq-accordion summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.faq-accordion p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: var(--text-muted);
+}
+
+/* Forms */
+.contact-form {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.contact-form button {
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.contact-form button:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.footer-content ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-content .tagline {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Ads Styling */
+.ad-container {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.header-banner-ad {
+    max-width: 728px;
+}
+
+.in-content-ad {
+    grid-column: 1 / -1;
+}
+
+/* Sidebar Ads (Fixed) */
+.sidebar-ad-left, .sidebar-ad-right {
+    position: fixed;
+    top: 100px;
+    width: 160px;
+    height: 600px;
+    display: none; /* Hidden by default */
+    z-index: 100;
+}
+
+.sidebar-ad-left { left: 10px; }
+.sidebar-ad-right { right: 10px; }
+
+/* Mobile Scaling for Header Banner */
+@media (max-width: 767px) {
+    .header-banner-ad {
+        transform: scale(0.44);
+        transform-origin: top center;
+        height: 40px;
+    }
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 1200px) {
+    .sidebar-ad-left, .sidebar-ad-right {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .poetry-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h1 { font-size: 2rem; }
+    .hero h2 { font-size: 1.5rem; }
+    
+    .sticky-header nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.5rem; }
+    .nav-link { font-size: 0.8rem; }
+    .sticky-header ul { gap: 0.8rem; }
+}
