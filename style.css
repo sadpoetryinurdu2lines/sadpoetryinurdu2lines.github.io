@@ -328,32 +328,12 @@ footer {
     grid-column: 1 / -1;
 }
 
-/* Sidebar Ads (Fixed) */
-.sidebar-ad-left, .sidebar-ad-right {
-    position: fixed;
-    top: 100px;
-    width: 160px;
-    height: 600px;
-    display: none; /* Hidden by default */
-    z-index: 100;
-}
-
-.sidebar-ad-left { left: 10px; }
-.sidebar-ad-right { right: 10px; }
-
 /* Mobile Scaling for Header Banner */
 @media (max-width: 767px) {
     .header-banner-ad {
         transform: scale(0.44);
         transform-origin: top center;
         height: 40px;
-    }
-}
-
-/* Responsive Breakpoints */
-@media (min-width: 1200px) {
-    .sidebar-ad-left, .sidebar-ad-right {
-        display: block;
     }
 }
 
