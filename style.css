@@ -159,6 +159,24 @@ main {
     flex-direction: column;
     align-items: center;
     opacity: 0; /* For animation */
+    background-blend-mode: overlay;
+}
+
+.poetry-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(26, 26, 46, 0.85);
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.poetry-card > * {
+    position: relative;
+    z-index: 2;
 }
 
 .poetry-card.visible {
