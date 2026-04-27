@@ -374,3 +374,18 @@ footer {
     .nav-link { font-size: 0.8rem; }
     .sticky-header ul { gap: 0.8rem; }
 }
+
+
+/* Poetry Image Backgrounds */
+.bg-poetry-1 { background-image: url('poetry_1.jpg') !important; }
+.bg-poetry-3 { background-image: url('poetry_3.jpg') !important; }
+.bg-poetry-6 { background-image: url('poetry_6.jpg') !important; }
+.bg-poetry-8 { background-image: url('poetry_8.jpg') !important; }
+.bg-poetry-10 { background-image: url('poetry_10.jpg') !important; }
+.bg-poetry-11 { background-image: url('poetry_11.jpg') !important; }
+.bg-poetry-12 { background-image: url('poetry_12.jpg') !important; }
+.bg-poetry-13 { background-image: url('poetry_13.jpg') !important; }
+.bg-poetry-15 { background-image: url('poetry_15.jpg') !important; }
+.bg-poetry-17 { background-image: url('poetry_17.jpg') !important; }
+.bg-poetry-18 { background-image: url('poetry_18.jpg') !important; }
+.bg-poetry-20 { background-image: url('poetry_20.jpg') !important; }
